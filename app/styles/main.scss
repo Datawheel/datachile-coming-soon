@@ -1,0 +1,317 @@
+// bower:scss
+// endbower
+
+@import url("https://fonts.googleapis.com/css?family=Yantramanav:300,400,500,700");
+
+@font-face {
+  font-family: Gilroy;
+  src: url("/fonts/gilroy/Gilroy-Light.otf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: Gilroy;
+  src: url("/fonts/gilroy/Gilroy-ExtraBold.otf");
+  font-weight: 800;
+}
+
+$font-family-text: "Yantramanav", sans-serif;
+/*
+font-family: 'Yantramanav', sans-serif;
+light 300
+regular 400
+medium 500
+bold 700
+*/
+
+$font-family-title: "Gilroy", sans-serif;
+/*
+font-family: 'Gilroy', sans-serif;
+light 300
+extrabold 800
+*/
+
+/* COLORS */
+$dark: #1b2e44;
+$night: #263b4f;
+$sky: #0071bc;
+$snow: #ffffff;
+
+@keyframes fadein {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@-webkit-keyframes fadein {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+.text-up  {
+  text-transform: uppercase;
+}
+
+.text-center {
+  text-align: center;
+}
+
+body {
+  font-family: $font-family-title;
+  margin: 0;
+  padding: 0;
+  color: $snow;
+  overflow-x: hidden;
+}
+
+section {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center center;
+}
+
+section#splash {
+  background-color: $night;
+  background-image: url("../images/sky-background.jpg");
+  padding: 100px 0px 0px 0px;
+  & #landscape {
+    width: 100%;
+    margin-top: 50px;
+    line-height: 1;
+    margin-bottom: -10px;
+  }
+}
+
+section#countdown {
+  background-color: $dark;
+  padding: 50px 0px 50px 0px;
+  & #counter {
+    display: flex;
+    justify-content: center;
+    padding: 50px 0px 50px 0px;
+    & div {
+      width: 100px;
+      display: flex;
+      flex-direction: column;
+      font-family: $font-family-title;
+      & span.value {
+        font-size: 60px;
+        -webkit-animation: 0.5s ease 0s normal forwards 1 fadein;
+        animation: 0.5s ease 0s normal forwards 1 fadein;
+      }
+      & span.unit {
+        padding: 10px 5px;
+        font-size: 14px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  & .social {
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+    & img {
+      width: 60px;
+      margin: 0 15px;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+section#text {
+  background-color: $night;
+  padding: 75px 0px 50px 0px;
+  & p.normal {
+    margin: 50px 0;
+  }
+}
+
+section#environment {
+  background-image: url("../images/conectividad-bg.png");
+  padding: 50px 25px 0px 25px;
+}
+
+section#education {
+  background-image: url("../images/educacion-bg.png");
+  padding: 50px 25px 25px 25px;
+}
+
+section#economy {
+  background-image: url("../images/economia-bg.png");
+  padding: 50px 25px 25px 25px;
+}
+
+section#demography {
+  background-image: url("../images/demografia-bg.png");
+  padding: 50px 25px 25px 25px;
+}
+
+section#health {
+  background-image: url("../images/salud-bg.png");
+  padding: 50px 25px 25px 25px;
+}
+
+section#politics {
+  background-image: url("../images/politica-bg.png");
+  padding: 50px 25px 25px 25px;
+}
+
+footer {
+  background-color: $night;
+  padding: 50px 25px 50px 25px;
+}
+
+h1 {
+  margin-bottom: 50px;
+}
+
+h2 {
+  opacity: 0.6;
+  font-size: 35px;
+  padding: 0px 25px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+img.gif {
+  width: 100%;
+}
+
+p.source {
+  color: $night;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin: 25px auto;
+  & strong {
+    font-weight: 800;
+  }
+}
+
+.keywords {
+  margin: 25px 0px;
+  & p.accent {
+    color: $sky;
+    font-size: 36px;
+    margin: 0px;
+    line-height: 1.2;
+  }
+}
+
+p.normal {
+  font-size: 20px;
+  font-weight: 300;
+  opacity: 0.6;
+  line-height: 1.3;
+  padding: 0px 25px;
+  & span {
+    color: $sky;
+    font-weight: 800;
+  }
+}
+
+p.topic {
+  font-size: 21px;
+  font-weight: 300;
+  opacity: 0.6;
+  line-height: 1.3;
+  padding: 0px 25px;
+  letter-spacing: 0.05em;
+  & strong {
+    letter-spacing: 0.1em;
+    font-size: 34px;
+    opacity: 1;
+  }
+}
+
+.white-line {
+  width: 25px;
+  height: 4px;
+  background-color: $snow;
+  display: block;
+  margin: 15px auto;
+}
+
+.blue-line {
+  width: 60px;
+  display: block;
+  height: 4px;
+  background-color: $sky;
+  margin: 0 auto;
+  &.space {
+    margin: 25px auto 74px auto;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (max-width: 1024px) {
+  .blue-left {
+    background-position: left center;
+  }
+  .blue-right {
+    background-position: right center;
+  }
+  p.topic {
+    margin-bottom: 50px;
+  }
+  p.source {
+    color: $snow;
+  }
+  h2 {
+    font-size: 30px;
+  }
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (max-width: 767px) {
+  section#countdown {
+    & #counter {
+      margin-bottom: 40px;
+      & div {
+        & span.value {
+          font-size: 40px;
+        }
+        & span.unit {
+          text-align: right;
+          -webkit-transform: rotate(-90deg);
+          -moz-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+          -o-transform: rotate(-90deg);
+          filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+          position: relative;
+          top: 40px;
+        }
+      }
+    }
+  }
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  //CSS
+}

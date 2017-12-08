@@ -1,0 +1,14 @@
+{
+  "name": "landing",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "modernizr": "~2.8.1",
+    "flexboxgrid": "^6.3.2",
+    "jquery.countdown": "^2.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  }
+}
