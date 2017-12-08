@@ -46,6 +46,16 @@
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109603240-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109603240-1');
+    </script>
   </head>
   <body>
     <!--[if IE]>
@@ -69,10 +79,7 @@
               <div class="box">
                 <p class="normal">Es un proyecto que</p>
                 <div class="keywords">
-                  <p class="accent">procesa</p>
-                  <p class="accent">integra</p>
-                  <p class="accent">distribuye</p>
-                  <p class="accent">visualiza</p>
+                  <p class="accent">procesa, integra, distribuye, visualiza</p>
                 </div>
                 <p class="normal">millones de datos públicos de más de 20 fuentes de datos oficiales*,
 de manera accesible y comprensible para cualquier usuario.</p>
@@ -288,16 +295,6 @@ de manera accesible y comprensible para cualquier usuario.</p>
         </div>
       </div>
     </footer>
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->

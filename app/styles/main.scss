@@ -33,7 +33,7 @@ extrabold 800
 /* COLORS */
 $dark: #1b2e44;
 $night: #263b4f;
-$sky: #0071bc;
+$sky: #588fe0;
 $snow: #ffffff;
 
 @keyframes fadein {
@@ -214,12 +214,11 @@ p.source {
 p.normal {
   font-size: 20px;
   font-weight: 300;
-  opacity: 0.6;
+  opacity: 1;
   line-height: 1.3;
   padding: 0px 25px;
   & span {
     color: $sky;
-    font-weight: 800;
   }
 }
 
