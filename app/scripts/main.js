@@ -1,13 +1,40 @@
+var isMobile = {
+	Android: function() {
+		return navigator.userAgent.match(/Android/i);
+	},
+	BlackBerry: function() {
+		return navigator.userAgent.match(/BlackBerry/i);
+	},
+	iOS: function() {
+		return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+	},
+	Opera: function() {
+		return navigator.userAgent.match(/Opera Mini/i);
+	},
+	Windows: function() {
+		return navigator.userAgent.match(/IEMobile/i);
+	},
+	any: function() {
+		return (
+			isMobile.Android() ||
+			isMobile.BlackBerry() ||
+			isMobile.iOS() ||
+			isMobile.Opera() ||
+			isMobile.Windows()
+		);
+	}
+};
+
 $(document).ready(function() {
 	/*Counter*/
 	$('#counter')
 		.countdown('2018/01/08 19:30:00', function(event) {
 			$(this).html(
 				event.strftime(
-					'<div><span class=\'value\'>%-D</span><span class=\'blue-line\'></span><span class=\'unit\'>días</div>' +
-						'<div><span class=\'value\'>%-H</span><span class=\'blue-line\'></span><span class=\'unit\'>horas</div>' +
-						'<div><span class=\'value\'>%-M</span><span class=\'blue-line\'></span><span class=\'unit\'>minutos</div>' +
-						'<div><span class=\'value\'>%-S</span><span class=\'blue-line\'></span><span class=\'unit\'>segundos</div>'
+					'<div><span class=\'value\'>%-D</span><span class=\'unit\'>días</div>' +
+						'<div><span class=\'value\'>%-H</span><span class=\'unit\'>horas</div>' +
+						'<div><span class=\'value\'>%-M</span><span class=\'unit\'>minutos</div>' +
+						'<div><span class=\'value\'>%-S</span><span class=\'unit\'>segundos</div>'
 				)
 			);
 		})
@@ -45,4 +72,8 @@ $(document).ready(function() {
 			e.preventDefault();
 		}
 	});
+
+	if (isMobile.any()) {
+		$('.wa_btn').show();
+	}
 });

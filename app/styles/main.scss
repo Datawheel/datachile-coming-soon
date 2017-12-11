@@ -60,6 +60,11 @@ $snow: #ffffff;
   }
 }
 
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .text-up  {
   text-transform: uppercase;
 }
@@ -85,28 +90,48 @@ section {
 
 section#splash {
   background-color: $night;
-  background-image: url("../images/sky-background.jpg");
+  background-image: url("../images/dark-bg.jpg");
   padding: 100px 0px 0px 0px;
   & #landscape {
     width: 100%;
     margin-top: 50px;
     line-height: 1;
     margin-bottom: -10px;
+    overflow: hidden;
+    text-align: center;
+    & img {
+      width: 100%;
+      margin: 0 auto;
+    }
   }
-}
-
-section#countdown {
-  background-color: $dark;
-  padding: 50px 0px 50px 0px;
   & #counter {
     display: flex;
     justify-content: center;
-    padding: 50px 0px 50px 0px;
+    padding: 0 25px;
     & div {
       width: 100px;
       display: flex;
       flex-direction: column;
       font-family: $font-family-title;
+      border: 1px solid #aaa;
+      padding: 10px 15px 0px 15px;
+      margin-left: -1px;
+      &:first-child {
+        -webkit-border-top-left-radius: 15px;
+        -webkit-border-bottom-left-radius: 15px;
+        -moz-border-radius-topleft: 15px;
+        -moz-border-radius-bottomleft: 15px;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+      }
+      &:last-child {
+        -webkit-border-top-right-radius: 15px;
+        -webkit-border-bottom-right-radius: 15px;
+        -moz-border-radius-topright: 15px;
+        -moz-border-radius-bottomright: 15px;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
       & span.value {
         font-size: 60px;
         -webkit-animation: 0.5s ease 0s normal forwards 1 fadein;
@@ -119,12 +144,20 @@ section#countdown {
       }
     }
   }
+}
+
+section#share {
+  background-color: $dark;
+  padding: 50px 0px 50px 0px;
   & .social {
     opacity: 0.7;
     transition: opacity 0.5s ease;
     & img {
       width: 60px;
       margin: 0 15px;
+    }
+    &.wa_btn {
+      display: none;
     }
     &:hover {
       opacity: 1;
@@ -133,10 +166,35 @@ section#countdown {
 }
 
 section#text {
-  background-color: $night;
-  padding: 75px 0px 50px 0px;
+  background-image: url("../images/texto-bg.png");
+  padding: 75px 0px 200px 0px;
   & p.normal {
     margin: 50px 0;
+  }
+}
+
+section#datasets {
+  background-color: $dark;
+  padding: 50px 0px 50px 0px;
+  & .dataset {
+    border-bottom: 1px solid #3c5668;
+    padding: 15px 0px 15px 0px;
+    margin: 0 15px;
+    & span {
+      display: block;
+      width: 100%;
+      text-align: left;
+      &.name {
+        font-size: 16px;
+        margin-bottom: 5px;
+      }
+      &.source {
+        font-size: 18px;
+        line-height: 1.2em;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+      }
+    }
   }
 }
 
@@ -173,6 +231,43 @@ section#politics {
 footer {
   background-color: $night;
   padding: 50px 25px 50px 25px;
+  & h4 {
+    text-transform: uppercase;
+  }
+  & .white-line {
+    margin: 15px 0px;
+  }
+  & #dw-logo {
+    height: 100px;
+    margin-left: -15px;
+  }
+  & .logos {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+
+    & #am-logo {
+      height: 110px;
+      margin-left: -15px;
+    }
+    & #corfo-logo {
+      margin-left: -17px;
+      height: 140px;
+      margin-top: -15px;
+    }
+    & #minecon-logo {
+      height: 100px;
+      margin-top: 0px;
+    }
+    & #direcon-logo {
+      height: 100px;
+      margin: 12px 0px;
+    }
+    & #asech-logo {
+      height: 100px;
+    }
+  }
 }
 
 h1 {
@@ -184,7 +279,17 @@ h2 {
   font-size: 35px;
   padding: 0px 25px;
   font-weight: 300;
+  line-height: 1.2;
   text-transform: uppercase;
+}
+
+h3 {
+  opacity: 0.8;
+  font-size: 25px;
+  padding: 0px 25px;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 50px 0 25px 0;
 }
 
 img.gif {
@@ -214,11 +319,12 @@ p.source {
 p.normal {
   font-size: 20px;
   font-weight: 300;
-  opacity: 1;
-  line-height: 1.3;
+  opacity: 0.6;
+  line-height: 1.5;
   padding: 0px 25px;
   & span {
-    color: $sky;
+    font-size: 30px;
+    letter-spacing: 0.1em;
   }
 }
 
@@ -284,23 +390,33 @@ p.topic {
 */
 
 @media (max-width: 767px) {
-  section#countdown {
+  section#splash {
     & #counter {
       margin-bottom: 40px;
       & div {
+        height: 135px;
+        padding: 10px 0px 0px 0px;
         & span.value {
           font-size: 40px;
         }
         & span.unit {
+          padding: 0;
           text-align: right;
-          -webkit-transform: rotate(-90deg);
-          -moz-transform: rotate(-90deg);
-          -ms-transform: rotate(-90deg);
-          -o-transform: rotate(-90deg);
+          transform-origin: right;
+          -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+          -moz-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+          -ms-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+          -o-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
           filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
           position: relative;
-          top: 40px;
+          width: 100%;
+          top: 5px;
         }
+      }
+    }
+    & #landscape {
+      & img {
+        width: 200%;
       }
     }
   }
@@ -311,6 +427,8 @@ p.topic {
   ##Screen = B/w 320px to 479px
 */
 
-@media (min-width: 320px) and (max-width: 480px) {
-  //CSS
+@media (max-width: 480px) {
+}
+
+@media (max-width: 320px) {
 }
